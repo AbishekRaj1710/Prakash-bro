@@ -3,198 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prakash & Reshma's Wedding Invitation | பிரகாஷ் & ரேஷ்மா திருமண அழைப்பு</title>
+    <title>Prakash & Reshma's Wedding Invitation</title>
     
-    <link rel="stylesheet" href="style.css">
+    <!-- Link to the external CSS file --><link rel="stylesheet" href="style.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Tangerine:wght@700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Tangerine:wght@700&display=swap" rel="stylesheet">
     
 </head>
 <body class="p-4 md:p-8">
 
-    <canvas id="petals-canvas"></canvas>
+    <!-- Canvas for falling petals effect --><canvas id="petals-canvas"></canvas>
 
-    <div class="max-w-3xl mx-auto card rounded-xl shadow-2xl overflow-hidden">
+    <!-- Main Invitation Card --><div class="max-w-3xl mx-auto card rounded-xl shadow-2xl overflow-hidden">
         
-        <div class="lang-toggle text-center pt-6 md:pt-10">
-            <button id="btn-en" class="active">English</button>
-            <button id="btn-ta">தமிழ்</button>
-        </div>
-
-        <div id="lang-en" class="lang-content active">
-            <div class="p-6 md:p-10 text-center">
+        <!-- ====== ENGLISH CONTENT ====== --><div class="p-6 md:p-10 text-center">
             
-                <div class="text-6xl mb-6 flex justify-center items-center space-x-4 animate-bounce-slow">
-                    <span role="img" aria-label="Ship">🚢</span>
-                    <span role="img" aria-label="Anchor">⚓</span>
-                    <span class="text-5xl font-bold text-maroon">&</span>
-                    <span role="img" aria-label="Graduation Cap">👩‍🏫</span>
-                    <span role="img" aria-label="Book">📚</span>
-                </div>
-
-                <p class="text-lg mt-6">With the divine blessings of</p>
-                <h3 class="text-xl font-bold text-maroon">Sri Thirumalai Venkatesa Perumal</h3>
-                <h3 class="text-xl font-bold text-maroon">Sri Padmavathi Thayar & Sri Andal</h3>
-
-                <p class="text-2xl mt-4">We joyfully invite you to the auspicious wedding ceremony of</p>
-
-                <h1 class="font-script text-7xl text-maroon my-4">
-                    G. Prakash <span class="text-red-500 text-5xl">❤️</span> M. Reshma
-                </h1>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                    <div class="border border-gray-200 p-4 rounded-lg">
-                        <h4 class="text-2xl font-bold text-maroon mb-2">👨‍✈️ G. Prakash</h4>
-                        <p>B.E. (Marine Engineer)</p>
-                        <p class="font-semibold">Suntech Ship Management PTE LTD.</p>
-                        <hr class="my-3">
-                        <p class="text-sm">Parents:</p>
-                        <p class="font-bold">G. Gopalsamy</p>
-                        <p class="font-bold">G. Kaleeswari</p>
-                    </div>
-                    <div class="border border-gray-200 p-4 rounded-lg">
-                        <h4 class="text-2xl font-bold text-maroon mb-2">👰‍♀️ M. Reshma</h4>
-                        <p>B.Sc., B.Ed.</p>
-                        <p class="font-semibold"> </p> <hr class="my-3">
-                        <p class="text-sm">Parents:</p>
-                        <p class="font-bold">Late S. Marichamy (Father)</p>
-                        <p class="font-bold">M. Mahalakshmi (Mother)</p>
-                    </div>
-                </div>
-
-                <hr class="separator my-8">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h2 class="font-script text-6xl text-gold">Reception</h2>
-                        <p class="text-xl font-bold mt-2">Saturday, 22 November 2025</p>
-                        <p class="text-lg">6:00 PM onwards</p>
-                    </div>
-                    
-                    <div>
-                        <h2 class="font-script text-6xl text-gold">Wedding</h2>
-                        <p class="text-xl font-bold mt-2">Sunday, 23 November 2025</p>
-                        <p class="text-lg">Muhurtham: 7:00 AM to 8:30 AM</p>
-                    </div>
-                </div>
-
-                <div class="mt-8 pb-8"> <h3 class="text-2xl font-bold text-maroon">📍 Venue</h3>
-                    <p class="text-3xl font-bold mt-1">J S Mahal</p>
-                    <p class="text-lg">Vadapalani, Chennai – 600026</p>
-                    <p class="text-lg font-semibold">(Landmark: Vadapalani Bus Stand)</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=JS+Mahal+Vadapalani+Chennai" target="_blank" rel="noopener noreferrer" class="gmaps-button">
-                        View on Google Maps
-                    </a>
-                </div>
-
+            <!-- FUNNY EMOJI STICKER AT THE TOP --><div class="text-6xl mb-6 flex justify-center items-center space-x-4 animate-bounce-slow">
+                <span role="img" aria-label="Ship">🚢</span>
+                <span role="img" aria-label="Anchor">⚓</span>
+                <span class="text-5xl font-bold text-maroon">&</span>
+                <span role="img" aria-label="Graduation Cap">👩‍🏫</span>
+                <span role="img" aria-label="Book">📚</span>
             </div>
-        </div>
 
-        <div id="lang-ta" class="lang-content font-tamil"> <div class="p-6 md:p-10 text-center">
+            <p class="text-lg mt-6">With the divine blessings of</p>
+            <h3 class="text-xl font-bold text-maroon">Sri Thirumalai Venkatesa Perumal</h3>
+            <h3 class="text-xl font-bold text-maroon">Sri Padmavathi Thayar & Sri Andal</h3>
 
-                <div class="text-4xl mb-6 flex justify-center items-center space-x-4 animate-bounce-slow">
-                    <span>🚢</span>
-                    <span>⚓</span>
-                    <span class="text-3xl font-bold text-maroon">&</span>
-                    <span>👩‍🏫</span>
-                    <span>📚</span>
+            <p class="text-2xl mt-4">We joyfully invite you to the auspicious wedding ceremony of</p>
+
+            <h1 class="font-script text-7xl text-maroon my-4">
+                G. Prakash <span class="text-red-500 text-5xl">❤️</span> M. Reshma
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                <!-- Groom --><div class="border border-gray-200 p-4 rounded-lg">
+                    <h4 class="text-2xl font-bold text-maroon mb-2">👨‍✈️ G. Prakash</h4>
+                    <p>B.E. (Marine Engineer)</p>
+                    <p class="font-semibold">Suntech Ship Management PTE LTD.</p>
+                    <hr class="my-3">
+                    <p class="text-sm">Parents:</p>
+                    <p class="font-bold">G. Gopalsamy</p>
+                    <p class="font-bold">G. Kaleeswari</p>
                 </div>
-
-                <p class="text-lg mt-6">எல்லா தேவதைகளின் அருளுடன்</p>
-                <h3 class="text-xl font-bold text-maroon">ஸ்ரீ திருமலை வெங்கடேச பெருமாள்</h3>
-                <h3 class="text-xl font-bold text-maroon">ஸ்ரீ பத்மவதி தாயார் & ஸ்ரீ ஆண்டாள்</h3>
-
-                <p class="text-2xl mt-4">ஆதரவும் அன்பும் கூடிய</p>
-                <p class="text-2xl">திருமண விழாவிற்கு உங்களை அன்புடன் அழைக்கிறோம்</p>
-
-                <h1 class="font-script text-5xl text-maroon my-4">
-                    ஜி. பிரகாஷ் <span class="text-red-500 text-3xl">❤️</span> எம். ரேஷ்மா
-                </h1>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-
-                    <div class="border border-gray-200 p-4 rounded-lg">
-                        <h4 class="text-2xl font-bold text-maroon mb-2">👨‍✈️ ஜி. பிரகாஷ்</h4>
-                        <p>B.E., (மெரைன் என்ஜினீரிங்)</p>
-                        <p class="font-semibold">Suntech Ship Management PTE LTD.</p>
-                        <hr class="my-3">
-                        <p class="text-sm">பெற்றோர்கள்:</p>
-                        <p class="font-bold">ஜி. கோபால்சாமி</p>
-                        <p class="font-bold">ஜி. காளீஸ்வரி</p>
-                    </div>
-
-                    <div class="border border-gray-200 p-4 rounded-lg">
-                        <h4 class="text-2xl font-bold text-maroon mb-2">👰‍♀️ எம். ரேஷ்மா</h4>
-                        <p>B.Sc., B.Ed.,</p>
-                        <hr class="my-3">
-                        <p class="text-sm">பெற்றோர்கள்:</p>
-                        <p class="font-bold">இறப்பு. எஸ். மாரிச்சாமி</p>
-                        <p class="font-bold">எம். மகாலட்சுமி</p>
-                    </div>
-
+                <!-- Bride --><div class="border border-gray-200 p-4 rounded-lg">
+                    <h4 class="text-2xl font-bold text-maroon mb-2">👰‍♀️ M. Reshma</h4>
+                    <p>B.Sc., B.Ed.</p>
+                    <p class="font-semibold">&nbsp;</p> <!-- Placeholder for vertical alignment --><hr class="my-3">
+                    <p class="text-sm">Parents:</p>
+                    <p class="font-bold">Late S. Marichamy (Father)</p>
+                    <p class="font-bold">M. Mahalakshmi (Mother)</p>
                 </div>
-
-                <hr class="separator my-8">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h2 class="font-script text-4xl text-gold">நிச்சயதார்த்தம் / வரவேற்பு</h2>
-                        <p class="text-xl font-bold mt-2">சனி, 22 நவம்பர் 2025</p>
-                        <p class="text-lg">மாலை 6:00 மணிமுதல்</p>
-                    </div>
-                    
-                    <div>
-                        <h2 class="font-script text-4xl text-gold">திருமணம்</h2>
-                        <p class="text-xl font-bold mt-2">ஞாயிறு, 23 நவம்பர் 2025</p>
-                        <p class="text-lg">முஹூர்த்தம்: காலை 7:00 முதல் 8:30 வரை</p>
-                    </div>
-                </div>
-
-                <div class="mt-8 pb-8">
-                    <h3 class="text-2xl font-bold text-maroon">📍 இடம்</h3>
-                    <p class="text-2xl font-bold mt-1">ஜே எஸ் மஹால்</p>
-                    <p class="text-lg">வடபழனி, சென்னை – 600026</p>
-                    <p class="text-lg font-semibold">(லேண்டு மார்க்: வடபழனி பஸ் ஸ்டாண்ட்)</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=JS+Mahal+Vadapalani+Chennai" target="_blank" class="gmaps-button">
-                        Google Maps இல் காண்க
-                    </a>
-                </div>
-
             </div>
+
+            <hr class="separator my-8">
+
+            <!-- Events --><div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Reception --><div>
+                    <h2 class="font-script text-6xl text-gold">Reception</h2>
+                    <p class="text-xl font-bold mt-2">Saturday, 22 November 2025</p>
+                    <p class="text-lg">6:00 PM onwards</p>
+                </div>
+                
+                <!-- Wedding --><div>
+                    <h2 class="font-script text-6xl text-gold">Wedding</h2>
+                    <p class="text-xl font-bold mt-2">Sunday, 23 November 2025</p>
+                    <p class="text-lg">Muhurtham: 7:00 AM to 8:30 AM</p>
+                </div>
+            </div>
+
+            <!-- Venue --><div class="mt-8 pb-8"> <!-- Added padding-bottom here --><h3 class="text-2xl font-bold text-maroon">📍 Venue</h3>
+                <p class="text-3xl font-bold mt-1">J S Mahal</p>
+                <p class="text-lg">Vadapalani, Chennai – 600026</p>
+                <p class="text-lg font-semibold">(Landmark: Vadapalani Bus Stand)</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=JS+Mahal+Vadapalani+Chennai" target="_blank" rel="noopener noreferrer" class="gmaps-button">
+                    View on Google Maps
+                </a>
+            </div>
+
         </div>
 
     </div>
 
-    <script>
+    <!-- ===== JAVASCRIPT FOR ALL LIVE EFFECTS ===== --><script>
         // --- 1. Language Toggle ---
-        const btnEn = document.getElementById('btn-en');
-        const btnTa = document.getElementById('btn-ta');
-        const langEn = document.getElementById('lang-en');
-        const langTa = document.getElementById('lang-ta');
-
-        btnEn.addEventListener('click', () => {
-            // Set English to active
-            btnEn.classList.add('active');
-            langEn.classList.add('active');
-            
-            // Set Tamil to inactive
-            btnTa.classList.remove('active');
-            langTa.classList.remove('active');
-        });
-
-        btnTa.addEventListener('click', () => {
-            // Set Tamil to active
-            btnTa.classList.add('active');
-            langTa.classList.add('active');
-
-            // Set English to inactive
-            btnEn.classList.remove('active');
-            langEn.classList.remove('active');
-        });
-
+        // Removed all language toggle Javascript
 
         // --- 2. Background Music ---
         // Music functionality removed as requested.
@@ -262,7 +158,7 @@
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            initPetals();
+            initPetals(); // Corrected typo from initPetAals
         });
 
         initPetals();
