@@ -4,7 +4,33 @@ body {
     background-color: #5D001E; /* Deep maroon background */
     background-image: url('https://www.transparenttextures.com/patterns/gplay.png');
     overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Needed for the new glow effect */
 }
+
+/* === NEW: Divine Light Background Effect === */
+/* This pseudo-element adds a soft, breathing light from the top */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind everything */
+    background: radial-gradient(ellipse at 50% 0%, 
+                    rgba(255, 230, 150, 0.15), /* Soft golden light */
+                    transparent 70%);
+    animation: breatheLight 10s ease-in-out infinite;
+    pointer-events: none; /* Make it unclickable */
+}
+
+/* === NEW: Keyframes for the breathing light === */
+@keyframes breatheLight {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.7; transform: scale(1); }
+}
+
 
 .font-tamil {
     font-family: 'Noto Sans Tamil', sans-serif;
@@ -14,7 +40,28 @@ body {
     font-family: 'Tangerine', cursive;
 }
 
-/* === NEW: Canvas for petals === */
+/* === NEW: Pulsating Glow for Main Names === */
+/* This targets the h1 with the names */
+h1.font-script {
+    /* NEW: Add a pulsating glow animation */
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* === NEW: Keyframes for the name glow === */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 223, 186, 0.3), 0 0 10px rgba(128, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 223, 186, 0.7), 0 0 20px rgba(128, 0, 0, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 223, 186, 0.3), 0 0 10px rgba(128, 0, 0, 0.5);
+    }
+}
+
+
+/* === Canvas for petals === */
 #petals-canvas {
     position: fixed;
     top: 0;
@@ -25,7 +72,7 @@ body {
     pointer-events: none; /* Make it unclickable */
 }
 
-/* === NEW: Music Toggle Button === */
+/* === Music Toggle Button === */
 #music-toggle {
     position: fixed;
     top: 20px;
@@ -54,27 +101,60 @@ body {
     position: relative; /* Make it appear above the canvas */
     z-index: 10;
     
-    /* NEW: Card entrance animation */
+    /* UPDATED: Add a subtle glow to the card itself */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(212, 175, 55, 0.3);
+    
+    /* Card entrance animation */
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInCard 1s ease-out 0.5s forwards;
+    /* UPDATED: Made animation slightly longer and smoother */
+    animation: fadeInCard 1.2s ease-out 0.5s forwards;
 }
 
-/* NEW: Card entrance keyframes */
+/* === UPDATED: Card entrance keyframes === */
 @keyframes fadeInCard {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        /* UPDATED: Added scaling for a 'pop' effect */
+        transform: translateY(20px) scale(0.98);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 0 0 5px rgba(212, 175, 55, 0.1);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+        /* This matches the final box-shadow state in .card */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(212, 175, 55, 0.3);
     }
 }
 
+/* === UPDATED: Gold Text Effect === */
 .text-gold {
-    color: #C09553; /* A more readable, darker gold */
+    /* Was: color: #C09553; */
+    
+    /* NEW: Metallic Gold Gradient Effect */
+    background-image: linear-gradient(145deg, 
+        #F0E68C, /* Lighter gold */
+        #D4AF37, /* Main gold */
+        #B8860B, /* Darker gold */
+        #D4AF37, /* Main gold */
+        #F0E68C  /* Lighter gold */
+    );
+    background-size: 200% auto; /* For shimmer animation */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 1px 1px 3px rgba(136, 103, 2, 0.2);
+    
+    /* NEW: Add a shimmer animation */
+    animation: goldShimmer 4s linear infinite;
 }
+
+/* === NEW: Keyframes for the gold text shimmer === */
+@keyframes goldShimmer {
+    from { background-position: 200% center; }
+    to { background-position: 0% center; }
+}
+
 
 .text-maroon {
     color: #800000; /* Classic maroon */
@@ -86,12 +166,12 @@ body {
     background-image: linear-gradient(to right, transparent, #D4AF37, transparent);
     border: 0;
     
-    /* NEW: Separator animation */
+    /* Separator animation */
     width: 0;
     animation: drawSeparator 1.5s ease-out 1s forwards;
 }
 
-/* NEW: Separator keyframes */
+/* Separator keyframes */
 @keyframes drawSeparator {
     from {
         width: 0;
@@ -128,27 +208,38 @@ body {
     display: block;
 }
 
-/* === NEW: Google Maps Button Styling & Animation === */
+/* === UPDATED: Google Maps Button Styling & Animation === */
 .gmaps-button {
     display: inline-block;
-    background-color: #800000;
+    /* background-color: #800000; */ /* REPLACED */
+    
+    /* NEW: Gradient background for a richer look */
+    background-image: linear-gradient(to right, #800000 0%, #a00020 50%, #800000 100%);
+    background-size: 200% auto; /* For hover effect */
+    
     color: #FFFBF5;
     font-bold: bold;
     padding: 0.5rem 1.5rem; /* 8px 24px */
     border-radius: 99px; /* full */
     margin-top: 1rem; /* 16px */
-    transition: transform 0.3s;
+    
+    /* UPDATED: Make all transitions smooth, including gradient */
+    transition: all 0.5s ease;
     box-shadow: 0 4px 14px 0 rgba(128, 0, 0, 0.39);
     
-    /* NEW: Pulse animation */
+    /* Pulse animation */
     animation: pulseButton 2s infinite;
 }
 
 .gmaps-button:hover {
     transform: scale(1.05);
+    /* NEW: Animate the gradient position on hover */
+    background-position: right center;
+    /* NEW: Enhance the shadow on hover */
+    box-shadow: 0 6px 20px 0 rgba(128, 0, 0, 0.6);
 }
 
-/* NEW: Pulse animation keyframes */
+/* Pulse animation keyframes */
 @keyframes pulseButton {
     0% {
         transform: scale(1);
@@ -163,4 +254,3 @@ body {
         box-shadow: 0 4px 14px 0 rgba(128, 0, 0, 0.39);
     }
 }
-
