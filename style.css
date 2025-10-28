@@ -1,0 +1,166 @@
+/* Define custom fonts and colors */
+body {
+    font-family: 'Crimson Text', serif;
+    background-color: #5D001E; /* Deep maroon background */
+    background-image: url('https://www.transparenttextures.com/patterns/gplay.png');
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.font-tamil {
+    font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+.font-script {
+    font-family: 'Tangerine', cursive;
+}
+
+/* === NEW: Canvas for petals === */
+#petals-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind the card, in front of the background */
+    pointer-events: none; /* Make it unclickable */
+}
+
+/* === NEW: Music Toggle Button === */
+#music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #D4AF37;
+    color: #800000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+#music-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* === UPDATED: Card Styling === */
+.card {
+    background-color: #FFFBF5; /* Soft cream */
+    border: 4px double #D4AF37; /* Gold double border */
+    color: #440014; /* Darker maroon text for readability */
+    position: relative; /* Make it appear above the canvas */
+    z-index: 10;
+    
+    /* NEW: Card entrance animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInCard 1s ease-out 0.5s forwards;
+}
+
+/* NEW: Card entrance keyframes */
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-gold {
+    color: #C09553; /* A more readable, darker gold */
+}
+
+.text-maroon {
+    color: #800000; /* Classic maroon */
+}
+
+/* === UPDATED: Separator Styling === */
+.separator {
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #D4AF37, transparent);
+    border: 0;
+    
+    /* NEW: Separator animation */
+    width: 0;
+    animation: drawSeparator 1.5s ease-out 1s forwards;
+}
+
+/* NEW: Separator keyframes */
+@keyframes drawSeparator {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.lang-toggle button {
+    padding: 8px 16px;
+    border: 1px solid #D4AF37;
+    background-color: transparent;
+    color: #D4AF37;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle button.active,
+.lang-toggle button:hover {
+    background-color: #D4AF37;
+    color: #800000;
+    font-weight: bold;
+}
+
+/* Hide content by default */
+.lang-content {
+    display: none;
+}
+
+/* Show active language */
+.lang-content.active {
+    display: block;
+}
+
+/* === NEW: Google Maps Button Styling & Animation === */
+.gmaps-button {
+    display: inline-block;
+    background-color: #800000;
+    color: #FFFBF5;
+    font-bold: bold;
+    padding: 0.5rem 1.5rem; /* 8px 24px */
+    border-radius: 99px; /* full */
+    margin-top: 1rem; /* 16px */
+    transition: transform 0.3s;
+    box-shadow: 0 4px 14px 0 rgba(128, 0, 0, 0.39);
+    
+    /* NEW: Pulse animation */
+    animation: pulseButton 2s infinite;
+}
+
+.gmaps-button:hover {
+    transform: scale(1.05);
+}
+
+/* NEW: Pulse animation keyframes */
+@keyframes pulseButton {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 14px 0 rgba(128, 0, 0, 0.39);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 6px 20px 0 rgba(128, 0, 0, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 14px 0 rgba(128, 0, 0, 0.39);
+    }
+}
+

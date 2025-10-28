@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakash & Reshma's Wedding Invitation</title>
+    
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Tangerine:wght@700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Import Tone.js for music -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Canvas for falling petals effect -->
+    <canvas id="petals-canvas"></canvas>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="font-tamil">
+        🎵 Play Music
+    </button>
+
+    <!-- Main Invitation Card -->
+    <div class="max-w-3xl mx-auto card rounded-xl shadow-2xl overflow-hidden">
+        
+        <!-- Language Toggle -->
+        <div class="lang-toggle text-center p-4 bg-white/50 space-x-2">
+            <button id="btn-en" class="active">English</button>
+            <button id="btn-ta" class="font-tamil">தமிழ்</button>
+        </div>
+
+        <!-- ====== ENGLISH CONTENT ====== -->
+        <div id="content-en" class="lang-content active p-6 md:p-10 text-center">
+            
+            <img src="image_8a7168.png" alt="Wedding Couple" class="w-48 h-48 mx-auto rounded-full shadow-lg" onerror="this.src='https://placehold.co/192x192/800000/FFFBF5?text=P%26R'; this.onerror=null;">
+
+            <p class="text-lg mt-6">With the divine blessings of</p>
+            <h3 class="text-xl font-bold text-maroon">Sri Thirumalai Venkatesa Perumal</h3>
+            <h3 class="text-xl font-bold text-maroon">Sri Padmavathi Thayar & Sri Andal</h3>
+
+            <p class="text-2xl mt-4">We joyfully invite you to the auspicious wedding ceremony of</p>
+
+            <h1 class="font-script text-7xl text-maroon my-4">
+                G. Prakash <span class="text-red-500 text-5xl">❤️</span> M. Reshma
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                <!-- Groom -->
+                <div class="border border-gray-200 p-4 rounded-lg">
+                    <h4 class="text-2xl font-bold text-maroon mb-2">👨‍✈️ G. Prakash</h4>
+                    <p>B.E. (Marine Engineer)</p>
+                    <p class="font-semibold">Suntech Ship Management PTE LTD.</p>
+                    <hr class="my-3">
+                    <p class="text-sm">Son of:</p>
+                    <p class="font-bold">G. Gopalsamy</p>
+                    <p class="font-bold">G. Kaleeswari</p>
+                </div>
+                <!-- Bride -->
+                <div class="border border-gray-200 p-4 rounded-lg">
+                    <h4 class="text-2xl font-bold text-maroon mb-2">👰‍♀️ M. Reshma</h4>
+                    <p>B.Sc., B.Ed.</p>
+                    <p class="font-semibold">&nbsp;</p> <!-- Placeholder for vertical alignment -->
+                    <hr class="my-3">
+                    <p class="text-sm">Niece of V. Mariyammal</p>
+                    <p class="text-sm">Daughter of Late M. Murugan & M. Mahalakshmi</p>
+                </div>
+            </div>
+
+            <hr class="separator my-8">
+
+            <!-- Events -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Reception -->
+                <div>
+                    <h2 class="font-script text-6xl text-gold">Reception</h2>
+                    <p class="text-xl font-bold mt-2">Saturday, 22 November 2025</p>
+                    <p class="text-lg">6:00 PM onwards</p>
+                </div>
+                
+                <!-- Wedding -->
+                <div>
+                    <h2 class="font-script text-6xl text-gold">Wedding</h2>
+                    <p class="text-xl font-bold mt-2">Sunday, 23 November 2025</p>
+                    <p class="text-lg">Muhurtham: 7:00 AM to 8:30 AM</p>
+                </div>
+            </div>
+
+            <!-- Venue -->
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold text-maroon">📍 Venue</h3>
+                <p class="text-3xl font-bold mt-1">J S Mahal</p>
+                <p class="text-lg">Vadapalani, Chennai – 600026</p>
+                <p class="text-lg font-semibold">(Landmark: Vadapalani Bus Stand)</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=JS+Mahal+Vadapalani+Chennai" target="_blank" rel="noopener noreferrer" class="gmaps-button">
+                    View on Google Maps
+                </a>
+            </div>
+
+            <hr class="separator my-8">
+
+            <!-- Bride's Family -->
+            <div>
+                <h3 class="font-script text-5xl text-gold mb-4">With Best Compliments From</h3>
+                <h4 class="text-2xl font-bold text-maroon mb-4">Bride's Family & Relatives</h4>
+                <ul class="space-y-2 max-w-md mx-auto text-left">
+                    <li><strong>V. Mariyammal</strong> - <span class="text-sm">M.C.A. (Wipro Technologies)</span></li>
+                    <li><strong>Late M. Murugan</strong> - <span class="text-sm">M.Tech. (SBI)</span></li>
+                    <li><strong>M. Mahalakshmi</strong> - <span class="text-sm">(LIC, Zonal Manager Club)</span></li>
+                    <li><strong>M. Yuvaraj</strong> - <span class="text-sm">B.E. (Swiggy, Data Analyst) (Bride’s Brother)</span></li>
+                </ul>
+            </div>
+
+            <p class="text-2xl mt-8 font-semibold">
+                We seek your gracious presence and blessings to make this occasion a memorable one.
+            </p>
+
+        </div>
+
+        <!-- ====== TAMIL CONTENT (Fully Translated) ====== -->
+        <div id="content-ta" class="lang-content font-tamil p-6 md:p-10 text-center">
+            
+            <img src="image_8a7168.png" alt="Wedding Couple" class="w-48 h-48 mx-auto rounded-full shadow-lg" onerror="this.src='https://placehold.co/192x192/800000/FFFBF5?text=P%26R'; this.onerror=null;">
+
+            <p class="text-lg mt-6">இறைவன் அருளால்</p>
+            <h3 class="text-xl font-bold text-maroon">ஸ்ரீ திருமலை வெங்கடேசப் பெருமாள்</h3>
+            <h3 class="text-xl font-bold text-maroon">ஸ்ரீ பத்மாவதி தாயார் மற்றும் ஸ்ரீ ஆண்டாள்</h3>
+
+            <p class="text-2xl mt-4">மங்கலமான திருமண விழாவிற்கு தங்களை அன்புடன் அழைக்கிறோம்</p>
+
+            <h1 class="font-script text-7xl text-maroon my-4">
+                G. பிரகாஷ் <span class="text-red-500 text-5xl">❤️</span> M. ரேஷ்மா
+            </h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                <!-- Groom -->
+                <div class="border border-gray-200 p-4 rounded-lg">
+                    <h4 class="text-2xl font-bold text-maroon mb-2">👨‍✈️ G. பிரகாஷ்</h4>
+                    <p>B.E. (மரைன் இன்ஜினியர்)</p>
+                    <p class="font-semibold">சன்டெக் ஷிப் மேனேஜ்மென்ட் PTE LTD.</p>
+                    <hr class="my-3">
+                    <p class="text-sm">மகன்:</p>
+                    <p class="font-bold">G. கோபால்சாமி</p>
+                    <p class="font-bold">G. காளீஸ்வரி</p>
+                </div>
+                <!-- Bride -->
+                <div class="border border-gray-200 p-4 rounded-lg">
+                    <h4 class="text-2xl font-bold text-maroon mb-2">👰‍♀️ M. ரேஷ்மா</h4>
+                    <p>B.Sc., B.Ed.</p>
+                    <p class="font-semibold">&nbsp;</S> <!-- Placeholder for vertical alignment -->
+                    <hr class="my-3">
+                    <p class="text-sm">மருமகள்: V. மாரியம்மாள்</p>
+                    <p class="text-sm">மகள்: அமரர் M. முருகன், M. மகாலட்சுமி</p>
+                </div>
+            </div>
+
+            <hr class="separator my-8">
+
+            <!-- Events -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Reception -->
+                <div>
+                    <h2 class="font-script text-6xl text-gold">வரவேற்பு</h2>
+                    <p class="text-xl font-bold mt-2">சனிக்கிழமை, 22 நவம்பர் 2025</p>
+                    <p class="text-lg">மாலை 6:00 மணி முதல்</p>
+                </div>
+                
+                <!-- Wedding -->
+                <div>
+                    <h2 class="font-script text-6xl text-gold">திருமணம்</h2>
+                    <p class="text-xl font-bold mt-2">ஞாயிற்றுக்கிழமை, 23 நவம்பர் 2025</p>
+                    <p class="text-lg">முகூர்த்தம்: காலை 7:00 முதல் 8:30 வரை</p>
+                </div>
+            </div>
+
+            <!-- Venue -->
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold text-maroon">📍 இடம்</h3>
+                <p class="text-3xl font-bold mt-1">J S மஹால்</p>
+                <p class="text-lg">வடபழனி, சென்னை – 600026</p>
+                <p class="text-lg font-semibold">(அடையாளம்: வடபழனி பஸ் ஸ்டாண்ட்)</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=JS+Mahal+Vadapalani+Chennai" target="_blank" rel="noopener noreferrer" class="gmaps-button font-tamil">
+                    வரைபடத்தில் காண்க
+                </a>
+            </div>
+
+            <hr class="separator my-8">
+
+            <!-- Bride's Family -->
+            <div>
+                <h3 class="font-script text-5xl text-gold mb-4">வாழ்த்துக்களுடன்</h3>
+                <h4 class="text-2xl font-bold text-maroon mb-4">மணமகள் குடும்பத்தினர் மற்றும் உறவினர்கள்</h4>
+                <ul class="space-y-2 max-w-md mx-auto text-left">
+                    <li><strong>V. மாரியம்மாள்</strong> - <span class="text-sm">M.C.A. (விப்ரோ டெக்னாலஜிஸ்)</span></li>
+                    <li><strong>அமரர் M. முருகன்</strong> - <span class="text-sm">M.Tech. (SBI)</span></li>
+                    <li><strong>M. மகாலட்சுமி</strong> - <span class="text-sm">(LIC, மண்டல மேலாளர் கிளப்)</span></li>
+                    <li><strong>M. யுவராஜ்</strong> - <span class="text-sm">B.E. (ஸ்விக்கி, டேட்டா அனலிஸ்ட்) (மணமகள் சகோதரர்)</span></li>
+                </ul>
+            </div>
+
+            <p class="text-2xl mt-8 font-semibold">
+                தாங்கள் வருகை தந்து, மணமக்களை ஆசீர்வதித்து, இந்த நிகழ்வை மறக்க முடியாத ஒன்றாக மாற்ற வேண்டுகிறோம்.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ===== JAVASCRIPT FOR ALL LIVE EFFECTS ===== -->
+    <script>
+        // --- 1. Language Toggle ---
+        const btnEn = document.getElementById('btn-en');
+        const btnTa = document.getElementById('btn-ta');
+        const contentEn = document.getElementById('content-en');
+        const contentTa = document.getElementById('content-ta');
+
+        btnEn.addEventListener('click', () => {
+            contentEn.classList.add('active');
+            contentTa.classList.remove('active');
+            btnEn.classList.add('active');
+            btnTa.classList.remove('active');
+        });
+
+        btnTa.addEventListener('click', () => {
+            contentEn.classList.remove('active');
+            contentTa.classList.add('active');
+            btnEn.classList.remove('active');
+            btnTa.classList.add('active');
+        });
+
+        // --- 2. Background Music ---
+        const musicToggle = document.getElementById('music-toggle');
+        let musicPlaying = false;
+
+        // Create a simple, pleasant melody with Tone.js
+        const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+        const melody = [
+            { time: '0:0', note: 'C4', duration: '8n' },
+            { time: '0:2', note: 'E4', duration: '8n' },
+            { time: '0:4', note: 'G4', duration: '8n' },
+            { time: '0:6', note: 'E4', duration: '8n' },
+            { time: '1:0', note: 'D4', duration: '8n' },
+            { time: '1:2', note: 'F4', duration: '8n' },
+            { time: '1:4', note: 'A4', duration: '8n' },
+            { time: '1:6', note: 'F4', duration: '8n' },
+        ];
+        
+        const part = new Tone.Part((time, value) => {
+            synth.triggerAttackRelease(value.note, value.duration, time);
+        }, melody);
+        part.loop = true;
+        part.loopEnd = '2m';
+
+        musicToggle.addEventListener('click', async () => {
+            // Start Tone context on user interaction
+            await Tone.start();
+            
+            if (musicPlaying) {
+                Tone.Transport.stop();
+                part.stop();
+                musicToggle.textContent = '🎵 Play Music';
+            } else {
+                Tone.Transport.start();
+                part.start(0);
+                musicToggle.textContent = '⏸️ Pause Music';
+            }
+            musicPlaying = !musicPlaying;
+        });
+
+
+        // --- 3. Falling Petals ---
+        const canvas = document.getElementById('petals-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let petals = [];
+        const petalColors = ['#FFC0CB', '#FFB6C1', '#FF69B4', '#DB7093', '#FFFBF5'];
+        const petalCount = 100;
+
+        class Petal {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height * 2 - canvas.height;
+                this.size = Math.random() * 5 + 3;
+                this.speed = Math.random() * 2 + 1;
+                this.sway = Math.random() * 0.5 - 0.25;
+                this.color = petalColors[Math.floor(Math.random() * petalColors.length)];
+            }
+
+            update() {
+                this.y += this.speed;
+                this.x += this.sway;
+                
+                if (this.y > canvas.height) {
+                    this.y = -10;
+                    this.x = Math.random() * canvas.width;
+                }
+                
+                if (this.x > canvas.width || this.x < 0) {
+                    this.sway *= -1;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initPetals() {
+            petals = [];
+            for (let i = 0; i < petalCount; i++) {
+                petals.push(new Petal());
+            }
+        }
+
+        function animatePetals() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            petals.forEach(petal => {
+                petal.update();
+                petal.draw();
+            });
+            requestAnimationFrame(animatePetals);
+        }
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initPetals();
+        });
+
+        initPetals();
+        animatePetals();
+
+    </script>
+</body>
+</html>
+
